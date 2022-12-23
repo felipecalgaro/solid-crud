@@ -1,6 +1,6 @@
 export interface HTTPResponse<T> {
   statusCode: number;
-  body: T | string;
+  body: T;
 }
 
 export interface HTTPRequest<B> {
