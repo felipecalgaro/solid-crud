@@ -1,9 +1,10 @@
-import { MongoClient as Mongo, Db } from "mongodb";
+import { MongoClient as Mongo, Db, WithId } from "mongodb";
+import { User } from "../models/user";
+import { MongoUser } from "../repositories/mongo-protocols";
 
 export const MongoClient = {
   client: undefined as unknown as Mongo,
   db: undefined as unknown as Db,
-
   async connect(): Promise<void> {
     const url =
       process.env.MONGODB_URL || "mongodb+srv://cluster0.mm6pfy5.mongodb.net";
@@ -17,5 +18,10 @@ export const MongoClient = {
     this.db = db;
 
     console.log("connected to mongo");
+  },
+  map(user: WithId<MongoUser>): User {
+    const { _id, ...rest } = user;
+
+    return { id: _id.toHexString(), ...rest };
   },
 };
