@@ -22,4 +22,4 @@ An API built using *SOLID* principles (especially Dependendy Injection principle
 
 ## 🎯 Architecture
 
-![image](https://user-images.githubusercontent.com/102491212/209448368-a2a70f27-ad3e-4991-a329-a21cc14225f6.png)
+<img width="1323" alt="img (1)" src="https://user-images.githubusercontent.com/102491212/209690419-75b05748-df23-4b38-ac75-7126d7d8b862.png">
